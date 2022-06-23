@@ -16,7 +16,7 @@ CREATE TABLE Real_Time_Traffic_Incident_Reports_Cleaned (
 
 --Inserting Data-- 
 COPY Real_Time_Traffic_Incident_Reports_Cleaned
-FROM 'C:\Users\emman\OneDrive\Documents\Data Sets\Austin Traffic Incident Project\Real_Time_Traffic_Incident_Reports_Cleaned.csv'
+FROM 'C:\MYDIRECTORY\Real_Time_Traffic_Incident_Reports_Cleaned.csv'
 WITH (FORMAT CSV, HEADER );
 
 -----------------
