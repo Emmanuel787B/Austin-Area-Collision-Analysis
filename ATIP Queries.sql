@@ -29,9 +29,9 @@ ORDER BY 2 DESC;
 
 -----------------
 
---Viewing All Collisions/Fatalities With Dates--
+--Viewing All Collisions/Fatalities With Time and Dates--
 
-SELECT date, issue_reported
+SELECT time, date, issue_reported
 FROM Real_Time_Traffic_Incident_Reports_Cleaned
 WHERE issue_reported ILIKE ANY(ARRAY['%collision%', '%fatal%', '%crash%']);
 
