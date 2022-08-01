@@ -164,3 +164,67 @@ ORDER BY 1
 --8564--
 
 --The most collisions occur between 8 pm and 12 am with 26540 reports. Followed by 23078 reports between 4 pm and 8 pm. --
+
+--Finding Times With Most Fatalities-- 
+
+SELECT COUNT(*)
+FROM(
+SELECT *
+FROM collision_time_date_table
+WHERE time BETWEEN '08:00' AND '11:59'
+	AND issue_reported ILIKE '%fatal%'
+ORDER BY 1 
+) AS subquery;
+--15--
+
+SELECT COUNT(*)
+FROM(
+SELECT * 
+FROM collision_time_date_table
+WHERE time BETWEEN '12:00' AND '15:59'
+	AND issue_reported ILIKE '%fatal%'
+ORDER BY 1 
+) AS subquery;
+--8--
+
+SELECT COUNT(*)
+FROM(
+SELECT * 
+FROM collision_time_date_table
+WHERE time BETWEEN '16:00' AND '19:59'
+	AND issue_reported ILIKE '%fatal%'
+ORDER BY 1  
+) AS subquery;
+--9--
+
+SELECT COUNT(*)
+FROM(
+SELECT * 
+FROM collision_time_date_table
+WHERE time BETWEEN '20:00' AND '23:59'
+	AND issue_reported ILIKE '%fatal%'
+ORDER BY 1  
+) AS subquery;
+--9--
+
+SELECT COUNT(*)
+FROM(
+SELECT * 
+FROM collision_time_date_table
+WHERE time BETWEEN '00:00' AND '03:59'
+	AND issue_reported ILIKE '%fatal%'
+ORDER BY 1  
+) AS subquery;
+--16--
+
+SELECT COUNT(*)
+FROM(
+SELECT * 
+FROM collision_time_date_table
+WHERE time BETWEEN '04:00' AND '07:59'
+	AND issue_reported ILIKE '%fatal%'
+ORDER BY 1  
+) AS subquery;
+--21--
+
+--The most fatal collisions happen between 4am and 8am with 21 fatalities, followed by 16 fatalities between 12am and 4am.
